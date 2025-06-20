@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Binance Red Packet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h2>🎁 Binance Red Packet</h2>
+    <p>👤 @<span id="username">Username</span></p>
+  </header>
+
+  <main>
+    <div id="red" class="section active">
+      <div class="latest-header">
+        <h3>🧧 Latest Red Packet</h3>
+      </div>
+      <div class="code-box">
+        <p id="code1">BIN123CODE</p>
+        <button onclick="copyCode('code1')">Copy</button>
+      </div>
+    </div>
+
+    <div id="tasks" class="section">
+      <div class="task">
+        <h3>📋 Join Task</h3>
+        <p><a href="https://t.me/binance_red_packet_codess" target="_blank">Join Channel</a> <button onclick="verifyJoin()">Verify</button></p>
+        <p id="joinStatus"></p>
+      </div>
+      <div class="task">
+        <h3>📅 Daily Check-in</h3>
+        <button class="checkin-btn" onclick="dailyCheckin()" id="checkinBtn">Check-in</button>
+        <p id="checkinStatus"></p>
+      </div>
+      <div class="task">
+        <h3>🎡 Spin</h3>
+        <button class="spin-btn" onclick="spinWheel()" id="spinBtn">Spin & Win</button>
+        <p id="spinStatus"></p>
+      </div>
+    </div>
+
+    <div id="wallet" class="section">
+      <div class="wallet">
+        <h3>👛 Wallet</h3>
+        <p>Balance: <strong id="balance">0 BTTC</strong></p>
+        <p>Enter Wallet Address:</p>
+        <input type="text" id="walletAddress" placeholder="Enter your BTTC Wallet Address" />
+        <p>Minimum Withdraw: 1000 BTTC</p>
+        <button onclick="withdrawBTTC()">Withdraw</button>
+      </div>
+      <div class="wallet">
+        <h4>📜 Withdraw History</h4>
+        <ul id="withdrawHistory"></ul>
+      </div>
+    </div>
+
+    <div id="invite" class="section">
+      <div class="wallet">
+        <h3>👤 Invite</h3>
+        <p>Your Referral Link:</p>
+        <input type="text" value="" id="refLink" readonly />
+        <button onclick="copyReferral()">Copy Referral Link</button>
+
+        <p><strong>Invited Users:</strong></p>
+        <div id="invitedUsers">Loading real referrals...</div>
+      </div>
+    </div>
+  </main>
+
+  <nav>
+    <a href="#" onclick="showSection('red')">🎁 Red Packet</a>
+    <a href="#" onclick="showSection('tasks')">📋 Tasks</a>
+    <a href="#" onclick="showSection('wallet')">👛 Wallet</a>
+    <a href="#" onclick="showSection('invite')">👤 Invite</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
